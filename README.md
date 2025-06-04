@@ -42,12 +42,6 @@ pip install -r requirements.txt
 # Email Configuration (for notifications)
 EMAIL=your.email@gmail.com
 EMAIL_PASSWORD=your_app_password  # Gmail App Password, not your regular password
-
-# Optional: Twilio Configuration (if using SMS notifications)
-TWILIO_ACCOUNT_SID=your_account_sid
-TWILIO_AUTH_TOKEN=your_auth_token
-TWILIO_PHONE_NUMBER=your_twilio_number
-YOUR_PHONE_NUMBER=your_phone_number
 ```
 
 2. Configure DMV locations in `config.py`:
