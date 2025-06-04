@@ -8,7 +8,7 @@ class Notifier:
         """Convert ISO date string to a more readable format."""
         try:
             date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-            return date.strftime("%B %d, %Y at %I:%M %p")
+            return date.strftime("%B %d, %Y")
         except (ValueError, TypeError):
             return date_str
 
