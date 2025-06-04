@@ -1,21 +1,9 @@
-from twilio.rest import Client
-from config import EMAIL, EMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, YOUR_PHONE_NUMBER
+from config import EMAIL, EMAIL_PASSWORD
 from datetime import datetime
 import smtplib
 from email.message import EmailMessage
 
 class Notifier:
-    def __init__(self):
-        try:
-            self.client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-            self.from_number = TWILIO_PHONE_NUMBER
-            self.to_number = YOUR_PHONE_NUMBER
-            print(f"Initialized Twilio client with:")
-            print(f"From: {self.from_number}")
-            print(f"To: {self.to_number}")
-        except Exception as e:
-            print(f"Error initializing Twilio client: {e}")
-
     def _format_date(self, date_str):
         """Convert ISO date string to a more readable format."""
         try:
@@ -36,8 +24,6 @@ class Notifier:
             formatted_date = self._format_date(appt['earliest_date'])
             print(f"{appt['location_name']}: {formatted_date}")
         print("---------------------------\n")
-
-    def send_sms_alert(self, appointments):
         """Send SMS alert about available appointments."""
         if not appointments:
             return

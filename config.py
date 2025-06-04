@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-from datetime import timedelta
 
 load_dotenv()
 
@@ -29,12 +28,6 @@ DMV_SERVICE_TYPES = {
 # Time window configuration
 CHECK_INTERVAL_MINUTES = 10
 AVAILABILITY_WINDOW_DAYS = 5  # Only show appointments within this many days
-
-# Twilio Configuration (for SMS)
-TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
-TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
-TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
-YOUR_PHONE_NUMBER = os.getenv('YOUR_PHONE_NUMBER')
 
 # API Configuration
 DMV_API_BASE_URL = "https://publicwebsiteapi.nydmvreservation.com/api" 
