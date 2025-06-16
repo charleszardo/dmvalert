@@ -103,7 +103,7 @@ class DMVClient:
             return None
 
     def get_all_availability(self):
-        """Get available appointments for all configured locations in parallel."""
+        """Get available appointments for all configured locations and service types in parallel."""
         results = []
         
         # Reduce concurrent requests further
@@ -116,9 +116,10 @@ class DMVClient:
                 executor.submit(
                     self.get_availability_for_location,
                     location_id,
-                    list(DMV_SERVICE_TYPES.keys())[0]
-                ): location_id
+                    service_type_id
+                ): (location_id, service_type_id)
                 for location_id in DMV_LOCATIONS.keys()
+                for service_type_id in DMV_SERVICE_TYPES.keys()
             }
             
             for future in as_completed(future_to_location):
@@ -126,11 +127,11 @@ class DMVClient:
                 if result:
                     results.append(result)
         
-        print(f"\nCompleted checking all locations. Found results for {len(results)} locations.")
+        print(f"\nCompleted checking all locations. Found results for {len(results)} location-service combinations.")
         return results
 
     def get_earliest_appointments(self):
-        """Get the earliest available appointment for each location within the time window."""
+        """Get the earliest available appointment for each location and service type within the time window."""
         availability_data = self.get_all_availability()
         earliest_appointments = []
         

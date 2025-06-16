@@ -22,7 +22,7 @@ class Notifier:
         print("---------------------------")
         for appt in appointments:
             formatted_date = self._format_date(appt['earliest_date'])
-            print(f"{appt['location_name']}: {formatted_date}")
+            print(f"{appt['location_name']} - {appt['service_type']}: {formatted_date}")
         print("---------------------------\n")
         """Send SMS alert about available appointments."""
         if not appointments:
@@ -31,7 +31,7 @@ class Notifier:
         message = "DMV Appointments Available!\n\n"
         for appt in appointments:
             formatted_date = self._format_date(appt['earliest_date'])
-            message += f"{appt['location_name']}: {formatted_date}\n"
+            message += f"{appt['location_name']} - {appt['service_type']}: {formatted_date}\n"
         
         try:
             print(f"Attempting to send SMS with message: {message}")
@@ -54,7 +54,10 @@ class Notifier:
         message['Subject'] = "DMV Appointments Available!"
         message['From'] = EMAIL
         message['To'] = EMAIL
-        message.set_content(f"DMV Appointments Available!\n\n" + "\n".join([f"{appt['location_name']}: {self._format_date(appt['earliest_date'])}" for appt in appointments]))
+        message.set_content(f"DMV Appointments Available!\n\n" + "\n".join([
+            f"{appt['location_name']} - {appt['service_type']}: {self._format_date(appt['earliest_date'])}"
+            for appt in appointments
+        ]))
 
         try:
             print(f"Attempting to send email with message: {message}")

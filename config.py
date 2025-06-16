@@ -5,14 +5,14 @@ load_dotenv()
 
 # DMV Configuration
 DMV_LOCATIONS = {
-    34: "Brooklyn Atlantic Center",
+    # 34: "Brooklyn Atlantic Center",
     35: "Brooklyn Coney Island",
-    32: "Bronx District Office",
-    16: "Bronx License Center",
+    # 32: "Bronx District Office",
+    # 16: "Bronx License Center",
     22: "Bethpage",
     29: "Garden City",
     24: "Massapequa",
-    30: "Harlem",
+    # 30: "Harlem",
     12: "Manhattan License Express",
     25: "Lower Manhattan",
     36: "College Point (Queens)",
@@ -22,7 +22,8 @@ DMV_LOCATIONS = {
 }
 
 DMV_SERVICE_TYPES = {
-    204: "Upgrade to a REAL ID or Enhanced Driver License (EDL)"
+    204: "Upgrade to a REAL ID or Enhanced Driver License (EDL)",
+    206: "Change Information on a Photo Document"
 }
 
 # Time window configuration
