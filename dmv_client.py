@@ -4,7 +4,8 @@ from config import (
     DMV_API_BASE_URL, 
     DMV_LOCATIONS, 
     DMV_SERVICE_TYPES,
-    AVAILABILITY_WINDOW_DAYS
+    AVAILABILITY_WINDOW_DAYS,
+    START_DATE
 )
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
@@ -50,9 +51,9 @@ class DMVClient:
         """Check if the appointment date is within the configured time window."""
         try:
             appointment_date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-            now = datetime.now()
-            window_end = now + timedelta(days=AVAILABILITY_WINDOW_DAYS)
-            return now <= appointment_date <= window_end
+            window_start = datetime.fromisoformat(START_DATE)
+            window_end = window_start + timedelta(days=AVAILABILITY_WINDOW_DAYS)
+            return window_start <= appointment_date <= window_end
         except (ValueError, TypeError):
             return False
 

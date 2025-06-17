@@ -27,8 +27,8 @@ DMV_SERVICE_TYPES = {
 }
 
 # Time window configuration
-CHECK_INTERVAL_MINUTES = 10
 AVAILABILITY_WINDOW_DAYS = 5  # Only show appointments within this many days
+START_DATE = "2024-06-22"  # Start date for looking for appointments (YYYY-MM-DD format)
 
 # API Configuration
 DMV_API_BASE_URL = "https://publicwebsiteapi.nydmvreservation.com/api" 
