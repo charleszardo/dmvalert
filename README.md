@@ -55,7 +55,6 @@ DMV_LOCATIONS = {
 
 3. Adjust time window and check frequency in `config.py`:
 ```python
-CHECK_INTERVAL_MINUTES = 30  # How often to check for availability
 AVAILABILITY_WINDOW_DAYS = 10  # Only show appointments within this many days
 ```
 

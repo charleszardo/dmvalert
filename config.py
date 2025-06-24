@@ -26,8 +26,6 @@ DMV_SERVICE_TYPES = {
     206: "Change Information on a Photo Document"
 }
 
-# Time window configuration
-CHECK_INTERVAL_MINUTES = 10
 AVAILABILITY_WINDOW_DAYS = 5  # Only show appointments within this many days
 
 # API Configuration
