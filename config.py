@@ -9,16 +9,16 @@ DMV_LOCATIONS = {
     35: "Brooklyn Coney Island",
     # 32: "Bronx District Office",
     # 16: "Bronx License Center",
-    22: "Bethpage",
-    29: "Garden City",
-    24: "Massapequa",
+    # 22: "Bethpage",
+    # 29: "Garden City",
+    # 24: "Massapequa",
     # 30: "Harlem",
     12: "Manhattan License Express",
     25: "Lower Manhattan",
-    36: "College Point (Queens)",
-    19: "Jamaica",
-    33: "Springfield Gardens (Queens)",
-    31: "Staten Island"
+    # 36: "College Point (Queens)",
+    # 19: "Jamaica",
+    # 33: "Springfield Gardens (Queens)",
+    # 31: "Staten Island"
 }
 
 DMV_SERVICE_TYPES = {
