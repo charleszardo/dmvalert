@@ -22,7 +22,7 @@ DMV_LOCATIONS = {
 }
 
 DMV_SERVICE_TYPES = {
-    204: "Upgrade to a REAL ID or Enhanced Driver License (EDL)",
+    # 204: "Upgrade to a REAL ID or Enhanced Driver License (EDL)",
     206: "Change Information on a Photo Document"
 }
 
